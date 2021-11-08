@@ -1,0 +1,9 @@
+//mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="/img/svg/sprite.svg#" + name)
+mixin nav__list
+	ul.nav__list
+		each name in ['Home', 'Product', 'About', 'Contact']
+			li.nav__link
+				a(href="#")= name

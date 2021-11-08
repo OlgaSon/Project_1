@@ -1,0 +1,525 @@
+@import "import/reset"
+@import "import/fonts"
+
+$primary: #00B6F0
+$first-text: #20262A
+$second-text: #5C5C5C
+$secondary: #112D57
+$dark: #182333
+$light-text: #FFFFFF
+
+.button
+    border: 1px solid $primary
+    box-sizing: border-box
+    border-radius: 85px
+    padding: 16px 36px
+    height: 52px
+    font-weight: bold
+    font-size: 18px
+    line-height: 20px
+    letter-spacing: 0.2px
+    background: none
+    margin: 7px
+    &_blue
+        background: $primary
+        color: white
+    &_white
+        background: white
+        color: $primary
+    &_black
+        background: white
+        color: black
+        border: none
+        margin-left: 25px
+.title
+    font-size: 36px
+    line-height: 42px
+    letter-spacing: 0.1px
+    text-align: center
+    color: $first-text
+    padding: 10px
+    position: relative
+    z-index: 3
+.link
+    padding: 10px
+    font-size: 18px
+    line-height: 20px
+    color: $primary
+    text-align: center
+    position: relative
+    z-index: 3
+.paragraphe
+    margin: 10px
+
+.header
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 7.62%, rgba(0, 225, 198, 0.26) 55.5%, #FFFFFF 70.92%)
+
+.nav
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 30px 5%
+    &__mob-menu,
+    &__nav-in-button
+        display: none
+    &__logo
+        width: 206px
+        height: 58px
+        z-index: 3
+        flex-shrink: 6
+    &__list
+        flex-shrink: 1
+    &__link
+        margin: 10px
+        text-decoration: none
+        color: $first-text
+        display: inline
+    &__button
+        color: $primary
+        width: 140px
+        flex-shrink: 3
+    &__mob-menu
+        flex-shrink: 0
+    @media (max-width: 785px)
+        .nav
+            &__link
+                display: none
+            &__icon
+                margin-top: 15px
+            &__mob-menu
+                position: relative
+                display: block 
+                &:hover
+                    .nav
+                        &__nav-in-button
+                            display: flex
+                            flex-direction: column
+                            justify-content: space-between
+                            align-items: flex-end
+                            position: absolute
+                            top: 0px
+                            right: 0px
+                            padding-top: 30px                        
+                        &__link
+                            display: block
+
+@mixin ht-pad($minw, $pl-pr)
+    @media (min-width: $minw)
+        padding: 100px $pl-pr 84px
+.header__text
+    @include ht-pad(0, 11%)
+    @include ht-pad(850px, 20%)
+    @include ht-pad(1200px, 30%)
+
+.second-headline
+    font-weight: bold
+    font-size: 56px
+    line-height: 65px
+    text-align: center
+    color: $secondary
+
+.sub-heading
+    font-size: 24px
+    line-height: 38px
+    text-align: center
+    padding: 10px
+    margin: 7px
+    color: $second-text
+    position: relative
+    z-index: 3
+    &__add
+        display: none
+        @media (min-width: 507px)
+            display: inline
+
+.header
+    &__buttons
+        display: flex
+        justify-content: center
+        position: relative
+        z-index: 3
+        .button
+            width: 192px
+    &__images 
+        position: relative
+        .header
+            &__screen
+                position: relative
+                z-index: 3
+                width: 100%
+                height: 100%
+            &__blue
+                position: absolute
+                width: 150%
+                height: 150%
+                top: -94%
+                left: -40%
+                max-width: 600px
+                @media (min-width: 850px)
+                    width: 91%
+                    height: 112%
+                    top: -65%
+                    left: -20%
+                    opacity: 0.9
+                @media (min-width: 1200px)
+                    width: 32%
+                    height: 74%
+                    top: -36%
+                    left: 0%
+                    opacity: 0.8
+            &__yellow
+                position: absolute
+                width: 120%
+                height: 120%
+                top: -19%
+                right: -58%
+                z-index: 1
+                max-width: 1000px
+                @media (min-width: 850px)
+                    width: 86%
+                    height: 87%
+                    top: -16%
+                    right: -36%
+                @media (min-width: 1200px)
+                    width: 52%
+                    height: 54%
+                    top: -14%
+                    right: -15%
+
+.main
+    background-color: #FFFFFF
+.cta1, .task, .test, .pricing, .footer
+    padding: 100px 0
+    display: grid
+    grid-template-columns: 1fr 1.96fr 1fr
+    justify-content: center
+    text-align: center
+    &__content
+        grid-column-start: 2 
+        min-width: 343px
+    .second-headline
+        color: $first-text
+        padding: 10px
+.cta1
+    .title
+        color: #F3CD03
+        padding: 10px
+    &__buttons
+        padding-top: 20px
+    .button
+        @media (max-width: 836px)
+            width: 317px
+.plus
+    display: grid
+    grid-template-areas: "pc" "font" "code" "feature"
+    grid-template-columns: repeat(1, 1fr)
+    grid-template-rows: repeat(4, 1fr)
+    grid-row-gap: 50px
+    justify-content: center
+    text-align: center
+    padding: 11%
+    position: relative
+    z-index: 3
+    &__primary
+        position: absolute
+        width: 50%
+        height: 30%
+        top: 0%
+        left: 0%
+        z-index: 1
+        &_full
+            display: none
+    &__secondary
+        position: absolute
+        width: 55%
+        height: 30%
+        bottom: 25%
+        right: 0%
+        z-index: 1
+        &_full
+            display: none
+    &__fonts
+        grid-area: font
+    &__feature 
+        grid-area: feature
+    &__fonts, &__feature
+        z-index: 3
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 10px
+    &__pc
+        grid-area: pc
+    &__code
+        grid-area: code
+    &__pc, &__code 
+        z-index: 3
+        width: 100%
+        height: 100%
+        object-fit: cover
+    @media (min-width: 850px)
+        grid-template-areas: "feature pc" "code font"
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: repeat(2, 1fr)
+        padding: 0 8%
+        &__fonts, &__feature
+            padding-bottom: 50px
+            align-items: start
+            .sub-heading
+                text-align: left
+                margin: 0
+        &__primary, &__secondary
+            display: none
+            &_full
+                display: inline
+                position: absolute
+                width: 61%
+                height: 58%
+                z-index: 1
+        &__primary_full
+            top: -7%
+            right: -20%
+        &__secondary_full  
+            bottom: -6%
+            left: -19%
+.task
+    color: $second-text
+    &__progress
+        width: 100%
+        height: 15px
+        margin: 52px 0 0 0
+        background: #F3F5F8
+        /*border-radius: 9.5px
+    .progress__text
+        width: 100%
+        height: 15px
+        margin: 0 0 52px 0
+        display: flex
+        justify-content: space-between
+        font-family: Roboto
+        font-size: 14px
+        line-height: 24px
+        &_number
+            color: #505D70
+            font-weight: bold     
+    &__full
+        display: none
+    .button
+        width: 266px
+    @media (min-width: 850px)
+        grid-template-columns: 1fr 3fr 1fr
+        &__mob
+            display: none
+        &__full
+            display: inline
+.test
+    position: relative
+    &__content
+        grid-column-start: 2
+        display: grid
+        grid-template-rows: 1fr 2fr 2fr 1fr 1fr
+        grid-row-gap: 25px
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center
+        padding: 0, 18%
+        &>*
+            z-index: 3
+    &__add
+        display: none
+    .button
+        width: 255px
+        margin: auto
+    @media (min-width: 850px)
+        &__add
+            display: inline
+        .paragraphe
+            padding: 0 12%
+    .reference
+        display: grid
+        grid-template-columns: 50px 1fr
+        grid-template-rows: repeat(2, 25px)
+        grid-column-gap: 23px
+        width: 190px
+        margin: auto
+        align-items: center
+        text-align: start
+        font-size: 18px
+        &__card
+            grid-row: 1/3
+            width: 100%
+            height: 100%
+        &__name
+            line-height: 20px
+            color: $first-text
+        &__career
+            line-height: 28px
+            letter-spacing: 0.1px
+            color: $second-text
+    &__shape
+        &_dark, &_light
+            position: absolute
+            z-index: 1
+        &_dark
+            bottom: -20%
+            right: -20%
+            width: 70%
+            height: 70%
+            @media (min-width: 850px)
+                bottom: -10%
+                right: -10%
+                width: 48%
+                height: 52%
+            @media (min-width: 1200px)
+                bottom: 0%
+                right: 0%
+                width: 25%
+                height: 35%
+        &_light
+            top: 25%
+            left: -9%
+            width: 20%
+            height: 20%
+            transform: rotate(-75deg)
+            @media (min-width: 850px)
+                top: 45%
+                left: 0%
+                height: 18%
+                transform: rotate(-75deg)
+            @media (min-width: 1200px)
+                top: 55%
+                left: 9%
+                height: 16%
+                transform: rotate(0deg)
+.pricing
+    background-color: $dark
+    grid-row-gap: 50px
+    position: relative
+    z-index: 2
+    &__content>*, &__tariff>*, .cost>*, .second-headline
+        color: $light-text
+    &__tariff
+        grid-column-start: 2 
+        display: grid
+        padding: 0 20%
+        .sub-heading
+            padding: 10px 15%
+        .paragraphe
+            margin: 32px 0
+    .button
+        width: 196px
+    .cost
+        margin: 10px
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        align-items: center
+        &__value
+            font-weight: 900
+            font-size: 72px
+            line-height: 78px
+            color: #F3CD03
+    @media (min-width: 850px)
+        grid-template-columns: 3fr 7fr 2fr 6fr 2fr
+        grid-template-rows: 1fr
+        text-align: start
+        &__tariff
+            grid-column-start: 4
+            .paragraphe
+                margin: 10px 0
+        .sub-heading
+            font-size: 18px
+            line-height: 28px
+            letter-spacing: 0.1px
+            text-align: start
+            padding: 0
+        .second-headline
+            text-align: start
+.focus
+    background: linear-gradient(180deg, #E9FAFF 0%, rgba(233, 250, 255, 0) 100%)
+    padding: 80px 10% 25px
+    display: grid
+    grid-template-columns: auto 1fr auto
+    text-align: center
+    &__headline, &__content
+        grid-column-start: 2
+    &__headline
+        color: $first-text
+        font-weight: normal
+        font-size: 46px
+        line-height: 57px
+        width: 77%
+        margin: auto
+    &__text
+        margin: 77px -22px
+        font-weight: 400
+        color: $second-text
+        :nth-child(2)
+            padding: 0px 57px
+    @media (min-width: 850px)
+            grid-template-columns: auto 1fr 1fr auto
+            text-align: start
+            padding: 70px 15%
+            &__content
+                grid-column-start: 3
+            &__headline, &__text, &__text :nth-child(1n)
+                margin: 0px
+                padding: 0px
+            &__headline
+                font-size: 36px
+                line-height: 42px
+                letter-spacing: 0.1px
+            &__text :nth-child(1n)
+                padding-bottom: 20px
+
+.footer
+    &__content
+        display: grid
+        grid-template-rows: repeat(3, auto)
+        grid-row-gap: 50px
+        .brand
+            &__logo
+                width: 206px
+                height: 58px
+            &__text
+                font-size: 18px
+                line-height: 28px
+                letter-spacing: 0.1px
+                color: $second-text
+                margin-top: -10px
+        .nav
+            &__list
+                display: flex
+                flex-direction: column
+                padding-bottom: 50px
+            &__link
+                display: inline
+        .social
+            display: flex
+            width: 210px
+            margin: auto
+            justify-content: space-between
+    @media (min-width: 850px)
+            grid-template-columns: 5% 1fr 5%
+            padding: 60px 0
+            width: 100%
+            &__content
+                grid-template-columns: repeat(3,1fr)
+                grid-template-rows: 1fr
+                align-items: center
+                text-align: left
+                .nav
+                    &__list
+                        flex-direction: row
+                        padding: 0 5%
+                        justify-content: space-between
+
+
+
+
+
+
+
+
+
+
